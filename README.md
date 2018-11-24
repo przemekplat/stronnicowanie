@@ -1,2 +1,2 @@
 # stronnicowanie
-Skrypt w Ruby - Stronnicowanie
+Skrypt w Ruby - Stronnicowanie - w przygotowaniu (na razie tylko test branch)
