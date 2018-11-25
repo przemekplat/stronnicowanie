@@ -1,4 +1,4 @@
-def ElementyWstronach(iloscElementow,iloscStron) #obliczanie
+def ElementyWstronach(iloscElementow,iloscStron) #obliczanie ile elementów znajduje się na stronie
  licz = 0.0
  pelnewiersze = 0
  elementyzapelniajace = 0
@@ -64,7 +64,7 @@ koniec = (ileStronIndeks/2) #o ile przesunięty jest koniec indeksacji (numery n
  if ileStronIndeks&1 != 0 then #dla parzystych indeksów koniec jest przesunięty o 1
   koniec += (1)
 end
-if (aktywnaStrona+koniec) > strony.length then # jeżeli nr wybranej strony + wartość przesunięcia na końcu indeksowania jest większa niż liczba wszystkich stron, wtedy...
+if (aktywnaStrona+koniec) > strony.length then # /komentarz do poprawy/ jeżeli nr wybranej strony + wartość przesunięcia na końcu indeksowania jest większa niż liczba wszystkich stron, wtedy...
   poczatek -= (aktywnaStrona+koniec)-(strony.length) # ...przesuwamy początek o różnice między wybraną przez użytkownika stroną + wartością przesunięcia na początku a całkowitą iloścą stron
 end
 StrzalkiLewo(aktywnaStrona,poczatek)
