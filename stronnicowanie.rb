@@ -9,7 +9,7 @@ def user_input() #wartości wpisywane przez użytkownika
   puts "Podaj liczbę numerów indeksów (ile stron ma się wyświetlać na dole):"
   user_index_digits_count = gets.chomp.to_i
   user_index_digits_count = user_page_count if user_page_count < user_index_digits_count
-  [user_elements_count, user_page_count, user_index_digits_count]
+  [user_elements_count, user_page_count, user_index_digits_count,]
 end
 
 def calculate_elements_on_page(user_elements_count,user_page_count) #obliczanie ile elementów znajduje się na stronie
@@ -53,7 +53,7 @@ def set_begin_end(user_index_digits_count, active_page, array) #ustawiamy przesu
   left_offset_index = -(user_index_digits_count / 2) #o ile przesunięty jest początek indeksacji (numery na dole) względem wybranej strony
   right_offset_index = user_index_digits_count / 2 #o ile przesunięty jest koniec indeksacji (numery na dole) względem wybranej strony
   right_offset_index += 1 if user_index_digits_count&1 != 0  #dla parzystych indeksów koniec jest przesunięty o 1
-  left_offset_index -= active_page + right_offset_index - array.length if active_page + right_offset_index > array.length # /komentarz do poprawy/ jeżeli nr wybranej strony + wartość przesunięcia na końcu indeksowania jest większa niż liczba wszystkich stron, wtedy przesuwamy początek o różnice między wybraną przez użytkownika stroną + wartością przesunięcia na początku a całkowitą iloścą stron.
+  left_offset_index -= active_page + right_offset_index - array.length if active_page + right_offset_index > array.length
   [left_offset_index, right_offset_index]
 end
 
@@ -85,11 +85,10 @@ def print_arrows_left(active_page,right_offset_index,user_page_count,user_index_
   end
 end
 
-user_elements_count, user_page_count, user_index_digits_count, active_page = user_input()
-elements_in_array, elements_uneven, active_page = calculate_elements_on_page(user_elements_count,user_page_count) #elements_in_array = elementy w tablicy, elements_uneven = dodatkowe elementy w tablicy gdy nierówne
 active_page = 0
+user_elements_count, user_page_count, user_index_digits_count = user_input()
+elements_in_array, elements_uneven = calculate_elements_on_page(user_elements_count,user_page_count) #elements_in_array = elementy w tablicy, elements_uneven = dodatkowe elementy w tablicy gdy zostanie reszta po dzieleniu
 array = Array.new(user_page_count) {Array.new(elements_in_array)}
-active_page = 0 if active_page > 0 || active_page < array.length
 write_to_array(user_elements_count,user_page_count,elements_uneven,active_page,array)
 print_active_page(active_page,array)
 left_offset_index, right_offset_index = set_begin_end(user_index_digits_count, active_page, array)
