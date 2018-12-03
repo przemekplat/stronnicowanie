@@ -87,8 +87,7 @@ end
 
 user_elements_count, user_page_count, user_index_digits_count, active_page = user_input()
 elements_in_array, elements_uneven, active_page = calculate_elements_on_page(user_elements_count,user_page_count) #elements_in_array = elementy w tablicy, elements_uneven = dodatkowe elementy w tablicy gdy nierówne
-puts "Podaj numer strony na który chcesz przejść (wartość od 0 do #{user_page_count-1}):"
-active_page = gets.chomp.to_i
+active_page = 0
 array = Array.new(user_page_count) {Array.new(elements_in_array)}
 active_page = 0 if active_page > 0 || active_page < array.length
 write_to_array(user_elements_count,user_page_count,elements_uneven,active_page,array)
