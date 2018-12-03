@@ -12,4 +12,5 @@ C) ile stron ma się wyświetlać na dole np. 5, czyli na 6 stronie mamy << < 4 
 
 # Sterowanie
 < > - poprzednia/kolejna strona
+
 q - wyjście
