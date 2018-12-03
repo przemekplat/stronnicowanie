@@ -9,3 +9,7 @@ A) zbiór elementów np 0..100
 B) na ile stron podzielić zbiór A np. 10
 
 C) ile stron ma się wyświetlać na dole np. 5, czyli na 6 stronie mamy << < 4 5 6 7 8 > >>
+
+# Sterowanie
+< > - poprzednia/kolejna strona
+q - wyjście
