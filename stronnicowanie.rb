@@ -57,8 +57,6 @@ def set_begin_end(user_index_digits_count, active_page, array) #ustawiamy przesu
   [left_offset_index, right_offset_index]
 end
 
-
-
 def print_arrows_right(active_page,left_offset_index) #wypisuje strzalki w lewo przy indeksie
   if active_page+left_offset_index >= 1 then
     if active_page+left_offset_index >= 2 then
@@ -86,8 +84,6 @@ def print_arrows_left(active_page,right_offset_index,user_page_count,user_index_
     print " >>" if active_page+right_offset_index <= user_page_count - 2 && user_page_count-user_index_digits_count >= 2
   end
 end
-
-
 
 user_elements_count, user_page_count, user_index_digits_count, active_page = user_input()
 elements_in_array, elements_uneven, active_page = calculate_elements_on_page(user_elements_count,user_page_count) #elements_in_array = elementy w tablicy, elements_uneven = dodatkowe elementy w tablicy gdy nierówne
